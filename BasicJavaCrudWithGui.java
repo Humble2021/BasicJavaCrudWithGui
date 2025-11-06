@@ -44,7 +44,7 @@ class BasicJavaCrudWithGui{
             f.add(b);
         }
 
-       
+     
         add.addActionListener(e -> {
             String name = JOptionPane.showInputDialog(f, "Enter friend's name:");
             if (name != null && !name.trim().isEmpty()) {
@@ -56,7 +56,7 @@ class BasicJavaCrudWithGui{
             }
         });
 
-        
+      
         view.addActionListener(e -> {
             if (friends.length == 0)
                 JOptionPane.showMessageDialog(f, "No friends found.");
@@ -68,17 +68,13 @@ class BasicJavaCrudWithGui{
             }
         });
 
-       
+    
         update.addActionListener(e -> {
             if (friends.length == 0) {
                 JOptionPane.showMessageDialog(f, "No friends to update.");
                 return;
             }
             JComboBox<String> combo = new JComboBox<>(friends);
-            combo.setBackground(Color.black);
-            combo.setForeground(Color.green);
-            combo.setFont(new Font("Monospaced", Font.PLAIN, 14));
-
             int result = JOptionPane.showConfirmDialog(f, combo, "Select a friend to update", JOptionPane.OK_CANCEL_OPTION);
             if (result == JOptionPane.OK_OPTION) {
                 int selectedIndex = combo.getSelectedIndex();
@@ -90,17 +86,12 @@ class BasicJavaCrudWithGui{
             }
         });
 
-       
         del.addActionListener(e -> {
             if (friends.length == 0) {
                 JOptionPane.showMessageDialog(f, "No records to delete.");
                 return;
             }
             JComboBox<String> combo = new JComboBox<>(friends);
-            combo.setBackground(Color.black);
-            combo.setForeground(Color.green);
-            combo.setFont(new Font("Monospaced", Font.PLAIN, 14));
-
             int result = JOptionPane.showConfirmDialog(f, combo, "Select a friend to delete", JOptionPane.OK_CANCEL_OPTION);
             if (result == JOptionPane.OK_OPTION) {
                 int selectedIndex = combo.getSelectedIndex();
@@ -112,7 +103,7 @@ class BasicJavaCrudWithGui{
             }
         });
 
-       
+      
         search.addActionListener(e -> {
             if (friends.length == 0) {
                 JOptionPane.showMessageDialog(f, "No friends to search.");
@@ -132,7 +123,6 @@ class BasicJavaCrudWithGui{
             }
         });
 
-        
         exit.addActionListener(e -> {
             int confirm = JOptionPane.showConfirmDialog(
                 f, "Are you sure you want to exit?", "Exit Confirmation",
@@ -141,7 +131,6 @@ class BasicJavaCrudWithGui{
             if (confirm == JOptionPane.YES_OPTION) System.exit(0);
         });
 
-        
         f.addWindowListener(new WindowAdapter() {
             public void windowClosing(WindowEvent e) {
                 int confirm = JOptionPane.showConfirmDialog(
